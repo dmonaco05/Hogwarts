@@ -1,0 +1,6 @@
+<h1>Reassign <%= @student.name %> !</h1>
+<%= form_for @student, url: {action: "update"} do |f| %>
+
+	<%= f.select :house_id, options_from_collection_for_select(House.all, :id, :name) %>
+	<%= f.submit "Reassign" %>
+<% end %>
